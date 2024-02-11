@@ -12,6 +12,9 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import PizzaShow from './components/pizzas/PizzaShow'
+import PizzaCreate from './components/pizzas/PizzaCreate'
+
 
 const App = () => {
 

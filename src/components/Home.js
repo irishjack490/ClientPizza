@@ -1,10 +1,13 @@
-const Home = (props) => {
-	// const { msgAlert, user } = props
-	console.log('props in home', props)
+import PizzasIndex from './pizzas/PizzasIndex'
 
+const Home = (props) => {
+	const { msgAlert } = props
+	
 	return (
 		<>
 			<h2>Home Page</h2>
+			
+			<PizzasIndex msgAlert={msgAlert} />
 		</>
 	)
 }
