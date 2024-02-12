@@ -46,8 +46,8 @@ const PizzaShow = (props) => {
                     message: messages.generalError,
                     variant: 'danger'
                 })
-            })
-    }, [updated])
+            });
+    }, [msgAlert, pizzaId, updated]);
     
     // this is an api call function, which means we'll need to handle the promise chain.
     // this means sending appropriate messages, as well as navigating upon success

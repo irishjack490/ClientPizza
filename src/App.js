@@ -71,19 +71,33 @@ const App = () => {
                 <ChangePassword msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
-				</Routes>
-				{msgAlerts.map((msgAlert) => (
-					<AutoDismissAlert
-						key={msgAlert.id}
-						heading={msgAlert.heading}
-						variant={msgAlert.variant}
-						message={msgAlert.message}
-						id={msgAlert.id}
-						deleteAlert={deleteAlert}
-					/>
-				))}
-			</Fragment>
-		)
+				<Route 
+					path='/create-pizza'
+					element={
+						<RequireAuth user={user} >
+							<PizzaCreate msgAlert={msgAlert} user={user}/>
+						</RequireAuth>
+					}
+				/>
+				<Route 
+					path='pizzas/:pizzaId'
+					element={
+						<PizzaShow user={user} msgAlert={msgAlert}/>
+					}
+				/>
+			</Routes>
+			{msgAlerts.map((msgAlert) => (
+				<AutoDismissAlert
+					key={msgAlert.id}
+					heading={msgAlert.heading}
+					variant={msgAlert.variant}
+					message={msgAlert.message}
+					id={msgAlert.id}
+					deleteAlert={deleteAlert}
+				/>
+			))}
+		</Fragment>
+	)
 }
 
 export default App
